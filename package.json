@@ -1,0 +1,27 @@
+{
+  "name": "oss2026",
+  "version": "1.0.0",
+  "description": "취침 시 잔여 카페인을 계산하고, 실제 수면 체감 데이터와 연관 분석하여 나만의 최적 카페인 컷오프 시각을 찾아주는 스마트 다이어리",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windstar1478/oss2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/windstar1478/oss2026/issues"
+  },
+  "homepage": "https://github.com/windstar1478/oss2026#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0"
+  }
+}
