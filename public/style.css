@@ -1,0 +1,162 @@
+/* ==========================================================================
+   [공통 스타일 가이드라인]
+   
+   1. 구역 사용: index.html의 각자 담당 <section> 안에 태그를 작성합니다.
+      (자동으로 백색 카드 박스 모듈 스타일이 적용됩니다.)
+   2. 제목 작성: 각 구역의 메인 제목은 <h2>제목</h2> 형태로 작성합니다.
+      (남색 구분선과 여백이 자동으로 적용됩니다.)
+   3. 입력 폼 작성: 라벨과 입력창(input, select 등)은 아래 구조를 사용합니다.
+      <div class="form-group">
+        <label>라벨명</label>
+        <input type="text" />
+      </div>
+   4. 버튼 사용:
+      - 메인 액션 버튼: <button class="btn btn-primary">저장</button>
+      - 보조/테두리 버튼: <button class="btn btn-outline">취소</button>
+   5. 요소를 숨겨야 할 때: class="hidden" 추가
+   ========================================================================== */
+
+/* ======================================================== */
+/* 1. 디자인 시스템 변수 */
+/* ======================================================== */
+:root {
+  --bg-color: #f8fafc;         /* 밝은 회색 배경 */
+  --card-bg: #ffffff;          /* 카드 백색 배경 */
+  --text-main: #0f172a;        /* 기본 검은색 텍스트 */
+  --text-muted: #64748b;       /* 보조 회색 텍스트 */
+  --border-color: #e2e8f0;     /* 테두리 색상 */
+  --navy-primary: #1e293b;     /* 포인트 남색 */
+  --navy-hover: #0f172a;       /* 남색 호버 */
+}
+
+/* 기본 여백 초기화 및 상자 크기 계산 방식 통일 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+/* ======================================================== */
+/* 2. 전체 레이아웃 */
+/* ======================================================== */
+.app-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.app-header h1 {
+  font-size: 1.85rem;
+  color: var(--navy-primary);
+  margin-bottom: 8px;
+}
+
+.app-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.app-container {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ======================================================== */
+/* 3. section 태그 공통 적용 */
+/* ======================================================== */
+main > section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* section 안에서 쓰는 h2 제목 공통 스타일 */
+main > section h2 {
+  font-size: 1.2rem;
+  color: var(--navy-primary);
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ======================================================== */
+/* 4. 공통 폼 & 버튼 */
+/* ======================================================== */
+
+/* 입력 폼 그룹 (라벨 + 입력창) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--navy-primary);
+}
+
+/* 공통 버튼 */
+.btn {
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--navy-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--navy-hover);
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: #f1f5f9;
+  border-color: var(--navy-primary);
+}
+
+/* 요소 숨김 클래스 */
+.hidden {
+  display: none !important;
+}
