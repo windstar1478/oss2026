@@ -31,3 +31,7 @@ app.listen(PORT, () => {
   console.log(`접속 주소: http://localhost:${PORT}`);
   console.log(`========================================`);
 });
+
+// 라우터 연결
+const caffeineRouter = require('./routes/caffeine');
+app.use('/api/caffeine', caffeineRouter);
