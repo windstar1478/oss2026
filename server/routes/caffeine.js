@@ -36,8 +36,9 @@ router.get('/status', (req, res) => {
   }
 
   const now = new Date();
-  const currentRemaining = calculateRemainingCaffeine(records, now);
-  const risk = assessSleepRisk(records, bedtime, now);
+  const nowMinutes = now.getHours() * 60 + now.getMinutes();
+  const currentRemaining = calculateRemainingCaffeine(records, nowMinutes);
+  const risk = assessSleepRisk(records, bedtime);
   const cutoffTime = calculateCutoffTime(bedtime);
 
   res.json({
