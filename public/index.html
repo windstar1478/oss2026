@@ -17,8 +17,32 @@
     <!-- ======================================================== -->
     <!-- [담당 A] 메인 잔여 카페인 현황 및 수면 위험도 판정 -->
     <!-- ======================================================== -->
-    <section>
-      
+    <section id="section-caffeine-status">
+      <h2>현재 체내 잔여 카페인 현황</h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+        <div style="font-size: 2.8rem; font-weight: 800; color: var(--navy-primary);">
+          <span id="current-caffeine">0</span> <small style="font-size: 1rem; color: var(--text-muted);">mg</small>
+        </div>
+
+        <!-- 목표 취침 시각 입력 + 적용 버튼 -->
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-muted);">
+          <label for="target-bedtime-input">목표 취침:</label>
+          <input type="time" id="target-bedtime-input" value="23:00" style="padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.9rem;">
+          <button type="button" id="apply-bedtime-btn" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">적용</button>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-color); padding: 14px 18px; border-radius: 8px; margin-bottom: 14px;">
+        <span>취침 시 예상 잔여량: <strong id="bedtime-caffeine">0</strong> mg</span>
+        <span id="risk-badge" style="padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; color: #fff; background-color: #10b981;">
+          계산 중...
+        </span>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted);">
+        💡 오늘 숙면을 위한 마지막 카페인(150mg 기준) 마지노선: <strong id="calc-cutoff-time" style="color: var(--text-main);">--:--</strong>
+      </p>
     </section>
 
     <!-- ======================================================== -->
